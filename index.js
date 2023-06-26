@@ -10,6 +10,7 @@ const pdfController = require('./controllers/uploadController');
 const shareController = require('./controllers/shareController');
 const searchController = require('./controllers/searchController');
 const commentController = require('./controllers/commentController');
+const port = process.env.PORT || 3000;
 const cors = require('cors');
 require('dotenv').config();
 app.use(cors());
@@ -47,7 +48,6 @@ app.post('/share', authenticateToken, shareController.sharePDF);
 app.get('/pdf/:id', searchController.getPDFById);
 app.post('/pdf/comment', authenticateToken, commentController.addComment);
 
-const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
