@@ -14,7 +14,7 @@ const cors = require('cors');
 require('dotenv').config();
 app.use(cors());
 
-mongoose.connect(`mongodb+srv://${process.env.DB_CREDENTIAL}@cluster0.d4gcavm.mongodb.net/?retryWrites=true&w=majority`, {
+mongoose.connect(`mongodb+srv://pdfmanager:password12345678@cluster0.d4gcavm.mongodb.net/?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -46,7 +46,7 @@ app.post('/share', authenticateToken, shareController.sharePDF);
 app.get('/pdf/:id', searchController.getPDFById);
 app.post('/pdf/comment', authenticateToken, commentController.addComment);
 
-const port = process.env.PORT || 3000;
+const port = 5000 || 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
