@@ -14,8 +14,8 @@ const cors = require('cors');
 require('dotenv').config();
 app.use(cors());
 
-const dbCredential = process.env.DB_CREDENTIAL;
-mongoose.connect(`mongodb+srv://${dbCredential}@cluster0.d4gcavm.mongodb.net/?retryWrites=true&w=majority`, {
+const connectionString = process.env.DATABASE_URl;
+mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
