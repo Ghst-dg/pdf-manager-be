@@ -47,6 +47,7 @@ app.post('/share', authenticateToken, shareController.sharePDF);
 app.get('/pdf/:id', searchController.getPDFById);
 app.post('/pdf/comment', authenticateToken, commentController.addComment);
 
-app.listen(process.env.PORT || 3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
