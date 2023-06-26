@@ -15,7 +15,7 @@ const cors = require('cors');
 require('dotenv').config();
 app.use(cors());
 
-const connectionString = process.env.DATABASE_URl;
+const connectionString = process.env.DATABASE_URL;
 mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
